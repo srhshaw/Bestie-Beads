@@ -1,5 +1,17 @@
 # eCommerce-Site - Beaded Jewelry
 
+## Wireframe
+
+
+## Entity-Relationship Diagram (ERD)
+
+![](./ReadMe_Images/DatabaseERdiagram.png)
+
+## Component Hierarchy Diagram
+
+![](./ReadMe_Images/project3ComponentHierarchyDiagram.png)
+
+
 ## Technologies
 
 **MongoDB:** A NoSQL database for storing user data, calendars, and events.
