@@ -11,7 +11,7 @@ This repository has been created to support the proposal of a jewelry e-commerce
 ## Wireframe
 <a href = "https://app.diagrams.net/#G1THv-YbN8E5_gIDkXwBbu4hcFI-asPGP-">Wireframe</a><br><br>
 
-<img src="./README_assets/JewelryWireframe1.jpg" width="300" height="375" > &ensp; <img src="./README_assets/JewelryWireframe2.jpg" width="300" height="375" > &ensp; <img src="./README_assets/JewelryWireframe3.jpg" width="300" height="375" >
+<img src="./README_assets/JewelryWireframe1.jpg" width="300" height="375" > &ensp; <img src="./README_assets/JewelryWireframe2.jpg" width="300" height="375" > &ensp; <img src="./README_assets/JewelryWireframe3.jpg" width="300" height="375" > &ensp;
 
 <img src="./README_assets/JewelryWireframe4.jpg" width="300" height="375" > &ensp; <img src="./README_assets/JewelryWireframe5.jpg" width="300" height="375" >
 
