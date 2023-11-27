@@ -1,16 +1,21 @@
 # eCommerce-Site - Beaded Jewelry
-![](./README_assets/BeadImage.jpg)
+<p align="center">
+  <img src="./README_assets/BeadImage.jpg" width="600" height="400" >
+</p>
+This repository has been created to support the proposal of a jewelry e-commerce website application.  The application backend will contain a database of inventory, customer reviews of pieces, and customer jewelry orders.  The frontend will provide an aesthetically pleasing user interface to learn about the business, browse jewelry offerings, place orders, and write merchandise reviews.    
 
 ## Entity-Relationship Diagram (ERD)
-<a href = "https://app.diagrams.net/#G12sR5_SzVnqOBcclAwB9JxbeOC4ySpZbi">ERD</a>
+<a href = "https://app.diagrams.net/#G12sR5_SzVnqOBcclAwB9JxbeOC4ySpZbi">ERD</a><br><br>
 ![](./README_assets/JewelryERD.jpg)
 
 ## Wireframe
-<a href = "https://app.diagrams.net/#G1THv-YbN8E5_gIDkXwBbu4hcFI-asPGP-">Wireframe</a>
+<a href = "https://app.diagrams.net/#G1THv-YbN8E5_gIDkXwBbu4hcFI-asPGP-">Wireframe</a><br><br>
+
 
 ## Component Hierarchy Diagram
-<a href = "https://app.diagrams.net/#G1YPYlsIeKmRvpO8ynm7FZgtV4EG-Rqylj">Component Hierarchy Diagram</a>
-![](./README_assets/JewelryComponentHierarchy.jpg)
+<a href = "https://app.diagrams.net/#G1YPYlsIeKmRvpO8ynm7FZgtV4EG-Rqylj">Component Hierarchy Diagram</a><br><br>
+<img src="./README_assets/JewelryComponentHierarchy.jpg" width="600" height="600">
+
 
 
 ## Technologies
@@ -29,6 +34,8 @@ The jewelry e-commerce site will be a full-stack, MERN application.
 **Axios:** Promise-based HTTP client for the browser and Node.js.
   
 **Mongoose:** MongoDB object modeling for Node.js.
+
+## Trello Board
 
 ## Contact Creator
 
