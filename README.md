@@ -1,18 +1,19 @@
 # eCommerce-Site - Beaded Jewelry
 
 ## Wireframe
-
+<a href = "https://app.diagrams.net/#G1THv-YbN8E5_gIDkXwBbu4hcFI-asPGP-">Wireframe</a>
 
 ## Entity-Relationship Diagram (ERD)
-
+<a href = "https://app.diagrams.net/#G12sR5_SzVnqOBcclAwB9JxbeOC4ySpZbi">ERD</a>
 ![](./ReadMe_Images/DatabaseERdiagram.png)
 
 ## Component Hierarchy Diagram
-
+<a href = "https://app.diagrams.net/#G1YPYlsIeKmRvpO8ynm7FZgtV4EG-Rqylj">Component Hierarchy Diagram</a>
 ![](./ReadMe_Images/project3ComponentHierarchyDiagram.png)
 
 
 ## Technologies
+The jewelry e-commerce site will be a full-stack, MERN application.  
 
 **MongoDB:** A NoSQL database for storing user data, calendars, and events.
   
