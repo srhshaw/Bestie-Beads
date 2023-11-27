@@ -1,11 +1,12 @@
 # eCommerce-Site - Beaded Jewelry
+![](./README_assets/All-About-Clay-Beaded-Bracelets-Hero-1-1024x819.jpg)
 
 ## Wireframe
 <a href = "https://app.diagrams.net/#G1THv-YbN8E5_gIDkXwBbu4hcFI-asPGP-">Wireframe</a>
 
 ## Entity-Relationship Diagram (ERD)
 <a href = "https://app.diagrams.net/#G12sR5_SzVnqOBcclAwB9JxbeOC4ySpZbi">ERD</a>
-![](./ReadMe_Images/DatabaseERdiagram.png)
+![](./README_assets/Copy of Copy of e-Commerce Site.jpg)
 
 ## Component Hierarchy Diagram
 <a href = "https://app.diagrams.net/#G1YPYlsIeKmRvpO8ynm7FZgtV4EG-Rqylj">Component Hierarchy Diagram</a>
