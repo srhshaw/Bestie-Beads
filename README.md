@@ -11,6 +11,9 @@ This repository has been created to support the proposal of a jewelry e-commerce
 ## Wireframe
 <a href = "https://app.diagrams.net/#G1THv-YbN8E5_gIDkXwBbu4hcFI-asPGP-">Wireframe</a><br><br>
 
+<img src="./README_assets/JewelryWireframe1.jpg" width="300" height="375" > &ensp; <img src="./README_assets/JewelryWireframe2.jpg" width="300" height="375" > &ensp; <img src="./README_assets/JewelryWireframe3.jpg" width="300" height="375" >
+
+<img src="./README_assets/JewelryWireframe4.jpg" width="300" height="375" > &ensp; <img src="./README_assets/JewelryWireframe5.jpg" width="300" height="375" >
 
 ## Component Hierarchy Diagram
 <a href = "https://app.diagrams.net/#G1YPYlsIeKmRvpO8ynm7FZgtV4EG-Rqylj">Component Hierarchy Diagram</a><br><br>
@@ -19,24 +22,10 @@ This repository has been created to support the proposal of a jewelry e-commerce
 
 
 ## Technologies
-The jewelry e-commerce site will be a full-stack, MERN application.  
-
-**MongoDB:** A NoSQL database for storing user data, calendars, and events.
-  
-**Express.js:** A web application framework for building robust APIs.
-  
-**React:** A JavaScript library for building a dynamic and interactive user interface.
-  
-**Node.js:** A server-side runtime environment for executing JavaScript.
-
-**Vite:** The tooling used for frontend development.
-  
-**Axios:** Promise-based HTTP client for the browser and Node.js.
-  
-**Mongoose:** MongoDB object modeling for Node.js.
+The jewelry e-commerce site will be a full-stack application utizilizing MongoDB, Express, React, and Node (MERN). 
 
 ## Trello Board
-
+<a href = "https://trello.com/invite/b/BCP5JFM6/ATTI82ff533d2807444b5fbc662dae480da3C436F047/jewelry-e-commerce-app">Trello Project Management Board</a>
 ## Contact Creator
 
 **Shanda Shaw**<br>
