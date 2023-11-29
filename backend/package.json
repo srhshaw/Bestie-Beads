@@ -1,0 +1,22 @@
+{
+  "name": "ecommerce-site",
+  "version": "1.0.0",
+  "description": "<p align=\"center\">   <img src=\"./README_assets/BeadImage.jpg\" width=\"600\" height=\"400\" > </p> This repository has been created to support the proposal of a jewelry e-commerce website application.  The application backend will contain a database of inventory, customer reviews of pieces, and customer jewelry orders.  The frontend will provide an aesthetically pleasing user interface to learn about the business, browse jewelry offerings, place orders, and write merchandise reviews.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mongoose": "^8.0.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.0.1"
+  }
+}

@@ -19,15 +19,13 @@ This repository has been created to support the proposal of a jewelry e-commerce
 <a href = "https://app.diagrams.net/#G1YPYlsIeKmRvpO8ynm7FZgtV4EG-Rqylj">Component Hierarchy Diagram</a><br><br>
 <img src="./README_assets/JewelryComponentHierarchy.jpg" width="600" height="600">
 
-
-
 ## Technologies
 The jewelry e-commerce site will be a full-stack application utizilizing MongoDB, Express, React, and Node (MERN). 
 
 ## Trello Board
 <a href = "https://trello.com/invite/b/BCP5JFM6/ATTI82ff533d2807444b5fbc662dae480da3C436F047/jewelry-e-commerce-app">Trello Project Management Board</a>
-## Contact Creator
 
+## Contact Creator
 **Shanda Shaw**<br>
 
 <a href = "https://github.com/srhshaw">![image](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)</a> &emsp;  <a href = "https://www.linkedin.com/in/shandashaw/">![image](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)</a>
