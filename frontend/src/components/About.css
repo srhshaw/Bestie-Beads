@@ -1,0 +1,26 @@
+.about{
+    display: flex;
+    flex-direction: row;
+    /* width: 100%; */
+    /* flex-wrap: nowrap; */
+    margin-top: 8vh;
+    margin-left: 4vw;
+    /* margin-right: 4vw; */
+}
+.aboutImage{
+    /* width: 40vh; */
+    
+    /* margin-left: 8vh; */
+}
+.aboutText{
+    /* width: 40vh;
+    height: 30vh; */
+    font-size: x-large;
+    margin-left: 4vw;
+    text-wrap: wrap;
+    margin-right: 4vw;
+    text-align: justify;
+}
+img{
+    margin: 0;
+}

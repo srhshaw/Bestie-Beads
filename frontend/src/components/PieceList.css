@@ -1,0 +1,19 @@
+.card{
+   margin-top: 4rem;
+   border: none;
+}
+
+.piece_image{
+    width: 24rem;
+    height: 24rem;
+    margin-top: 0;
+}
+
+.piece_container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 3rem;
+}
