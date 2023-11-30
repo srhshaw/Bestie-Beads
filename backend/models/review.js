@@ -5,7 +5,6 @@ const reviewSchema = new Schema(
     {
         piece: {type: Schema.Types.ObjectId, ref: 'Piece'},
         userName: {type: String, required: true},
-        date: {type: Date, required: true},
         text: {type: String, required: true}
     },
     {timestamps: true},
