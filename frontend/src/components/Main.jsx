@@ -6,15 +6,17 @@ import PieceList from './PieceList.jsx'
 import PiecePage from './PiecePage.jsx'
 import ReviewForm from './ReviewForm.jsx'
 
-const Main = () => {
+const Main = ({userId}) => {
     return(
         <div className='main'>
             <Routes>
                 <Route path = '/' element={<Home/>} />
                 <Route path = '/about' element={<About/>} />
                 <Route path = '/pieces' element={<PieceList/>} />
-                <Route path = '/pieces/:id' element={<PiecePage/>} />
-                <Route path = '/reviewform/:id' element={<ReviewForm/>} />
+                <Route path = '/pieces/:id' element={<PiecePage
+                    userId = {userId}
+                />} />
+                {/* <Route path = '/reviewform/:id' element={<ReviewForm/>} /> */}
             </Routes>
         </div>
     )

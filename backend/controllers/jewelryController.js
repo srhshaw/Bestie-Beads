@@ -165,7 +165,7 @@ async function createReview(req, res) {
     try{
         const review = await Review.create(req.body)
         return res.status(201).json({
-            project
+            review
         })
     } catch (error) {
         return res.status(500).send(error.message)

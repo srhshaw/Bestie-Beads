@@ -5,7 +5,23 @@ import axios from "axios"
 import { BASE_URL } from "../globals"
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap' 
 
-const ReviewForm = () => {
+
+const ReviewForm = ({userId, pieceId, setReviews, setShowReviewForm}) => {
+
+    const createReview = async(url, object) => {
+      
+        const response = await axios.post(url, object)
+        setReviews(prevReviews => {
+            console.log("Previous Reviews:", prevReviews);
+            const updatedReviews = [...prevReviews, response.data];
+            console.log("Updated Reviews:", updatedReviews);
+            return updatedReviews;
+        });
+        setShowReviewForm(false)
+        //alternative method for forcing page reload; better for multi-page apps
+        //window.location.reload()
+    }
+
     function handleSubmit(e) {
         e.preventDefault()
         const form = e.target
@@ -13,6 +29,14 @@ const ReviewForm = () => {
 
         const formJson = Object.fromEntries(formData.entries())
         console.log(formJson)
+        console.log(userId)
+        console.log(pieceId)
+        formJson.userId = userId
+        formJson.piece = pieceId
+        console.log(formJson)
+
+        let endpointUrl = `${BASE_URL}/reviews`
+        createReview(endpointUrl, formJson)
     }
 
 return (

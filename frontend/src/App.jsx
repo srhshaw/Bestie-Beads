@@ -19,12 +19,13 @@ function App() {
     }
   }, [userId])
   
-
   return (
       <div className = "app">
         < Header />
         < Nav />
-        < Main />
+        < Main 
+          userId = {userId}
+        />
         < Footer />
       </div>
     

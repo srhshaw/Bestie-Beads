@@ -5,7 +5,7 @@ import axios from "axios"
 import { BASE_URL } from "../globals"
 import ReviewForm from "./ReviewForm"
 
-export default function PieceDetails() {
+export default function PieceDetail({userId}) {
     //piece is the current state, setPiece is the function that allows that state to be updated.  Every time you call setPiece() it will re-render the component with the new value for piece.
     const [piece, setPiece] = useState(null)
     let {id} = useParams()
@@ -23,10 +23,9 @@ export default function PieceDetails() {
             setReviews(response.data)
             console.log(response.data)
         }
-
         getPiece()
         getPieceReviews()
-    }, [])
+    }, [showReviewForm])
     
 return piece ? (
     <>
@@ -49,7 +48,7 @@ return piece ? (
         <div className = "pieceReviews">
             <div className="pieceButton">
                 <button onClick = {() => setShowReviewForm(!showReviewForm)}>{showReviewForm ? "Return to Piece" : "Write a review"}</button>
-                {showReviewForm ? < ReviewForm /> : null}
+                {showReviewForm ? < ReviewForm userId = {userId} pieceId = {piece._id} setReviews = {setReviews} setShowReviewForm = {setShowReviewForm}/> : null}
             </div>
             <div className = "pieceReviewsList">
                 <h3>Customer Reviews</h3> 
