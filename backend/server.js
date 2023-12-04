@@ -30,6 +30,7 @@ app.delete('/pieces/:id', jewelryController.deletePiece)
 
 //REVIEWS
 app.get('/reviews', jewelryController.getAllReviews)
+app.get('/reviews/piece/:id', jewelryController.getReviewsByPieceId)
 app.get('/reviews/:id', jewelryController.getOneReview)
 app.post('/reviews', jewelryController.createReview)
 app.put('/reviews/:id', jewelryController.updateReview)

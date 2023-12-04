@@ -2,7 +2,7 @@ const Order = require('../models/order')
 const Piece = require('../models/piece')
 const Review = require('../models/review')
 
-module.exports = { getAllOrders, getOneOrder, createOrder, updateOrder, deleteOrder,getAllPieces, getOnePiece, createPiece, updatePiece, deletePiece,getAllReviews, getOneReview, createReview, updateReview, deleteReview
+    module.exports = { getAllOrders, getOneOrder, createOrder, updateOrder, deleteOrder,getAllPieces, getOnePiece, createPiece, updatePiece, deletePiece, getAllReviews, getReviewsByPieceId, getOneReview, createReview, updateReview, deleteReview
 }
 
 //ORDER
@@ -138,10 +138,20 @@ async function getAllReviews(req, res) {
     }
 }
 
+async function getReviewsByPieceId(req, res){
+    try{
+        const id =  req.params.id
+        const reviews = await Review.find({piece: id}, 'userName text').exec();
+        res.json(reviews)
+    } catch (error) {
+        return res.status(500).send(error.message)
+    }
+}
+
 async function getOneReview(req, res) {
     try{
         const id = req.params.id
-        const review = await Review.findbyId(id)
+        const review = await Review.findById(id)
         if (review) {
             return res.json(review)
         }

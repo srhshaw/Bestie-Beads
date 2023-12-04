@@ -3,8 +3,10 @@ const {Schema} = require('mongoose')
 
 const reviewSchema = new Schema(
     {
+        //ref: IS TO Piece MODEL
         piece: {type: Schema.Types.ObjectId, ref: 'Piece'},
         userName: {type: String, required: true},
+        userId: {type: String, required: true},
         text: {type: String, required: true}
     },
     {timestamps: true},

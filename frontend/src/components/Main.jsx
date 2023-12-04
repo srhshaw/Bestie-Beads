@@ -4,6 +4,7 @@ import Home from './Home.jsx'
 import About from './About.jsx'
 import PieceList from './PieceList.jsx'
 import PiecePage from './PiecePage.jsx'
+import ReviewForm from './ReviewForm.jsx'
 
 const Main = () => {
     return(
@@ -12,7 +13,8 @@ const Main = () => {
                 <Route path = '/' element={<Home/>} />
                 <Route path = '/about' element={<About/>} />
                 <Route path = '/pieces' element={<PieceList/>} />
-                <Route path = '/pieces/:id'element={<PiecePage/>} />
+                <Route path = '/pieces/:id' element={<PiecePage/>} />
+                <Route path = '/reviewform/:id' element={<ReviewForm/>} />
             </Routes>
         </div>
     )
