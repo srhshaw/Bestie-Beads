@@ -14,6 +14,9 @@ app.use(bodyParser.json())
 app.use(express())
 app.use(express.urlencoded({extended:false}))
 
+//USER HISTORY
+//app.get('reviewhistory/:id', jewelryController.getUserReviewHistory)
+
 //ORDERS
 app.get('/orders', jewelryController.getAllOrders)
 app.get('/orders/:id', jewelryController.getOneOrder)
@@ -31,6 +34,7 @@ app.delete('/pieces/:id', jewelryController.deletePiece)
 //REVIEWS
 app.get('/reviews', jewelryController.getAllReviews)
 app.get('/reviews/piece/:id', jewelryController.getReviewsByPieceId)
+app.get('/reviews/user/:id', jewelryController.getReviewsByUserId)
 app.get('/reviews/:id', jewelryController.getOneReview)
 app.post('/reviews', jewelryController.createReview)
 app.put('/reviews/:id', jewelryController.updateReview)

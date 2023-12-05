@@ -6,7 +6,7 @@ import { BASE_URL } from "../globals"
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap' 
 
 
-const ReviewForm = ({userId, pieceId, setReviews, setShowReviewForm}) => {
+const ReviewForm = ({pieceId, setReviews, setShowReviewForm}) => {
 
     const createReview = async(url, object) => {
       
@@ -29,9 +29,9 @@ const ReviewForm = ({userId, pieceId, setReviews, setShowReviewForm}) => {
 
         const formJson = Object.fromEntries(formData.entries())
         console.log(formJson)
-        console.log(userId)
+        //console.log(userId)
         console.log(pieceId)
-        formJson.userId = userId
+        formJson.userId = localStorage.getItem('userId')
         formJson.piece = pieceId
         console.log(formJson)
 

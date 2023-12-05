@@ -48,7 +48,7 @@ return piece ? (
         <div className = "pieceReviews">
             <div className="pieceButton">
                 <button onClick = {() => setShowReviewForm(!showReviewForm)}>{showReviewForm ? "Return to Piece" : "Write a review"}</button>
-                {showReviewForm ? < ReviewForm userId = {userId} pieceId = {piece._id} setReviews = {setReviews} setShowReviewForm = {setShowReviewForm}/> : null}
+                {showReviewForm ? < ReviewForm pieceId = {piece._id} setReviews = {setReviews} setShowReviewForm = {setShowReviewForm}/> : null}
             </div>
             <div className = "pieceReviewsList">
                 <h3>Customer Reviews</h3> 

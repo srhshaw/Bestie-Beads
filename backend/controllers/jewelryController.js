@@ -2,8 +2,24 @@ const Order = require('../models/order')
 const Piece = require('../models/piece')
 const Review = require('../models/review')
 
-    module.exports = { getAllOrders, getOneOrder, createOrder, updateOrder, deleteOrder,getAllPieces, getOnePiece, createPiece, updatePiece, deletePiece, getAllReviews, getReviewsByPieceId, getOneReview, createReview, updateReview, deleteReview
+    module.exports = { getAllOrders, getOneOrder, createOrder, updateOrder, deleteOrder,getAllPieces, getOnePiece, createPiece, updatePiece, deletePiece, getAllReviews, getReviewsByPieceId, getReviewsByUserId, getOneReview, createReview, updateReview, deleteReview
 }
+
+//USER REVIEW HISTORY
+//  async function getUserReviewHistory(req, res){
+//     try{
+//         const id = req.params.id
+//         const reviews = await Review.find({userId: id}, `piece text`).exec();
+//         reviews.map((review) => {
+//             const pieceDetails = await Piece.findById(review.piece, 'image, name').exec();
+//             res.json(review, pieceDetails)
+//         })
+
+//     } catch (error){
+//         return res.status(500).send(error.message)
+//     }
+
+//  }
 
 //ORDER
 async function getAllOrders(req, res) {
@@ -144,6 +160,16 @@ async function getReviewsByPieceId(req, res){
         const reviews = await Review.find({piece: id}, 'userName text').exec();
         res.json(reviews)
     } catch (error) {
+        return res.status(500).send(error.message)
+    }
+}
+
+async function getReviewsByUserId(req, res){
+    try{
+        const id = req.params.id
+        const reviews = await Review.find({userId: id}, `piece text`).exec();
+        res.json(reviews)
+    } catch (error){
         return res.status(500).send(error.message)
     }
 }

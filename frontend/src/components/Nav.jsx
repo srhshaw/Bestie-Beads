@@ -12,8 +12,8 @@ const Nav = () => {
             <Link to="/pieces">
                 <h2>Shop</h2>
             </Link>
-            <Link to="/order">
-                <h2>My Orders</h2>
+            <Link to={`/myactivity`}>
+                <h2>My Activity</h2>
             </Link>
         </div>
     )
