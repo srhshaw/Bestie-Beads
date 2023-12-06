@@ -167,7 +167,8 @@ async function getReviewsByPieceId(req, res){
 async function getReviewsByUserId(req, res){
     try{
         const id = req.params.id
-        const reviews = await Review.find({userId: id}, `piece text`).exec();
+        //.populate!!!
+        const reviews = await Review.find({userId: id}).populate('piece').exec();
         res.json(reviews)
     } catch (error){
         return res.status(500).send(error.message)
