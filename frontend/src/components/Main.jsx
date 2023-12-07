@@ -4,7 +4,6 @@ import About from './About.jsx'
 import PieceList from './PieceList.jsx'
 import PiecePage from './PiecePage.jsx'
 import MyActivity from './MyActivity.jsx'
-import ReviewForm from './ReviewForm.jsx'
 import Cart from './Cart.jsx'
 
 const Main = () => {
@@ -17,7 +16,6 @@ const Main = () => {
                 <Route path = '/pieces/:id' element={<PiecePage/>} />
                 <Route path = '/myactivity' element={<MyActivity/>} />
                 <Route path = '/cart' element={<Cart/>} />
-                {/* <Route path = '/reviewform/:id' element={<ReviewForm/>} /> */}
             </Routes>
         </div>
     )

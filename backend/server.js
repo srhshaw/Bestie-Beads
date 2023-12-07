@@ -19,6 +19,7 @@ app.use(express.urlencoded({extended:false}))
 
 //ORDERS
 app.get('/orders', jewelryController.getAllOrders)
+app.get('/orders/user/:id', jewelryController.getOrdersByUserId)
 app.get('/orders/:id', jewelryController.getOneOrder)
 app.post('/orders', jewelryController.createOrder)
 app.put('/orders/:id', jewelryController.updateOrder)

@@ -2,24 +2,8 @@ const Order = require('../models/order')
 const Piece = require('../models/piece')
 const Review = require('../models/review')
 
-    module.exports = { getAllOrders, getOneOrder, createOrder, updateOrder, deleteOrder,getAllPieces, getOnePiece, createPiece, updatePiece, deletePiece, getAllReviews, getReviewsByPieceId, getReviewsByUserId, getOneReview, createReview, updateReview, deleteReview
+    module.exports = { getAllOrders, getOrdersByUserId, getOneOrder, createOrder, updateOrder, deleteOrder,getAllPieces, getOnePiece, createPiece, updatePiece, deletePiece, getAllReviews, getReviewsByPieceId, getReviewsByUserId, getOneReview, createReview, updateReview, deleteReview
 }
-
-//USER REVIEW HISTORY
-//  async function getUserReviewHistory(req, res){
-//     try{
-//         const id = req.params.id
-//         const reviews = await Review.find({userId: id}, `piece text`).exec();
-//         reviews.map((review) => {
-//             const pieceDetails = await Piece.findById(review.piece, 'image, name').exec();
-//             res.json(review, pieceDetails)
-//         })
-
-//     } catch (error){
-//         return res.status(500).send(error.message)
-//     }
-
-//  }
 
 //ORDER
 async function getAllOrders(req, res) {
@@ -27,6 +11,17 @@ async function getAllOrders(req, res) {
         const orders = await Order.find()
         res.json(orders)
     } catch (error) {
+        return res.status(500).send(error.message)
+    }
+}
+
+async function getOrdersByUserId(req, res){
+    try{
+        const id = req.params.id
+        //.populate!!!
+        const orders = await Order.find({userId: id}).populate('piece').exec();
+        res.json(orders)
+    } catch (error){
         return res.status(500).send(error.message)
     }
 }
@@ -60,7 +55,6 @@ async function createOrder(req, res){
 async function updateOrder(req, res) {
     try{
         const id = req.params.id
-        //findByIdAndUpdate takes 3 arguments.  new: true means the return value will show you the new value after it has been modified with req.body.
         const order = await Order.findByIdAndUpdate(id, req.body, {new: true})
         if (order) {
             return res.status(200).json(order)

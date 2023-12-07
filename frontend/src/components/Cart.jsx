@@ -1,24 +1,40 @@
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import axios from 'axios'
-import{ BASE_URL } from '../globals'
+import './Cart.css'
 
 const Cart = ({pieces, prices}) => {
-    const [cartPieces, setCartPieces] = useState([pieces])
-    const [cartPrices, setCartPrices] = useState([prices])
+    const [cart, setCart] = useState([])
+    const [total, setTotal] = useState(0)
+    useEffect(() => {
+        const getCart = async() => {
+            const myCart = localStorage.getItem("myCart")
+            if (myCart) {
+                const cart = JSON.parse(myCart)
+                setCart(cart)
+                let total = 0
+                cart.forEach(element => 
+                    total += element.price
+                )
+                setTotal(total)
+            }
+        }
+        getCart()
+    },[])
 
-    console.log(cartPieces)
-    console.log(cartPrices)
 
     return(
         <div className = "cart">
             <div>
-            {cartPieces.map((cartPiece) =>
-                <div>
-                    {cartPiece}
-                </div>
+                <h3>My Cart</h3>
+            </div>
+            {cart.map((cartPiece) =>
+            <div key = {cartPiece._id} className = "cartContent">
+                    <img className="cart_piece_image" alt="Bracelet" src={cartPiece.image} width="85"/>
+                    <h4>{cartPiece.name}</h4>
+                    <h4>${cartPiece.price}</h4>
+            </div>
             )}
-                <h5>Fill this cart!</h5>
+            <div className='total'>
+                <h3>Cart Total: ${total}</h3>
             </div>
         </div>
     )

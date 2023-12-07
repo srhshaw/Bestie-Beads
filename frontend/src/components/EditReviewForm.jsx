@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react"
-import { useParams, Link } from "react-router-dom"
+import { useState } from "react"
 import axios from "axios"
 import { BASE_URL } from "../globals"
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap' 
@@ -69,11 +68,7 @@ return (
         </div>
         
     </div>
-    
 )
 }
 
 export default EditReviewForm
-
-
-//onClick = {handleDelete(review._id)}

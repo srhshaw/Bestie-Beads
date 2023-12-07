@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import { useParams, Link } from "react-router-dom"
 import axios from "axios"
 import './ReviewForm.css'
 import { BASE_URL } from "../globals"
@@ -18,23 +17,15 @@ const ReviewForm = ({pieceId, setReviews, setShowReviewForm}) => {
             return updatedReviews;
         });
         setShowReviewForm(false)
-        //alternative method for forcing page reload; better for multi-page apps
-        //window.location.reload()
     }
 
     function handleSubmit(e) {
         e.preventDefault()
         const form = e.target
         const formData = new FormData(form)
-
         const formJson = Object.fromEntries(formData.entries())
-        console.log(formJson)
-        //console.log(userId)
-        console.log(pieceId)
         formJson.userId = localStorage.getItem('userId')
         formJson.piece = pieceId
-        console.log(formJson)
-
         let endpointUrl = `${BASE_URL}/reviews`
         createReview(endpointUrl, formJson)
     }

@@ -4,10 +4,8 @@ import axios from "axios"
 import './PiecePage.css'
 import { BASE_URL } from "../globals"
 import ReviewForm from "./ReviewForm"
-// import Cart from "./Cart"
 
 export default function PieceDetail({userId}) {
-    //piece is the current state, setPiece is the function that allows that state to be updated.  Every time you call setPiece() it will re-render the component with the new value for piece.
     const [piece, setPiece] = useState(null)
     let {id} = useParams()
     const [reviews, setReviews] = useState([])
@@ -70,7 +68,7 @@ return piece ? (
                 <div className="pieceTextButton">
                     <div className = "pieceText">
                         <h2>{piece.name}</h2>
-                        <h3>${piece.price}</h3>
+                        <h2>${piece.price}</h2>
                         <ul>
                         {piece.details.map((detail, id)=> (
                             <li key = {id}>{detail}</li>
