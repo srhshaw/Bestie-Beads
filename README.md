@@ -5,8 +5,9 @@
 This repository has been created to support the proposal of a jewelry e-commerce website application.  The application backend will contain a database of inventory, customer reviews of pieces, and customer jewelry orders.  The frontend will provide an aesthetically pleasing user interface to learn about the business, browse jewelry offerings, place orders, and write merchandise reviews.    
 
 ## Entity-Relationship Diagram (ERD)
+
 <a href = "https://app.diagrams.net/#G12sR5_SzVnqOBcclAwB9JxbeOC4ySpZbi">ERD</a><br><br>
-![](./README_assets/JewelryERD.jpg)
+![](README_assets/BestieBeadsERD.jpg)
 
 ## Wireframe
 <a href = "https://app.diagrams.net/#G1THv-YbN8E5_gIDkXwBbu4hcFI-asPGP-">Wireframe</a><br><br>

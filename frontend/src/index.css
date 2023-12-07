@@ -2,6 +2,12 @@ a{
   text-decoration: none;
   color: navy;
 }
+
+body{
+  background-image: url("./assets/background.jpg");
+  color: navy;
+}
+
 .cartIcon{
   position: absolute;
   top: 15px;
@@ -55,6 +61,10 @@ body{
 }
 
 @media screen and (max-width: 768px) {
+  body{
+    background-size: 768px;
+  }
+
   .creditFooter{
     font-size: smaller;
   }
