@@ -3,9 +3,7 @@
   <img src="./README_assets/Homepage.jpg" width="600" height="500" >
 </p>
 Every tween wants Bestie Beads!  And now with the launch of the Bestie Beads e-commerce website, making all of your beaded technicolor dreams come true is easier than ever! <br>
-The Bestie Beads website is a full-stack e-commerce application that allows customers to view the Bestie Beads bracelet inventory, shop the products, and write product reviews through an engaging, user-friendly interface.
-
-This repository has been created to support the proposal of a jewelry e-commerce website application.  The application backend will contain a database of inventory, customer reviews of pieces, and customer jewelry orders.  The frontend will provide an aesthetically pleasing user interface to learn about the business, browse jewelry offerings, place orders, and write merchandise reviews.    
+The Bestie Beads website is a full-stack e-commerce application that allows customers to view the Bestie Beads bracelet inventory, shop the products, and write product reviews through an engaging, user-friendly interface.   
 
 ## Entity-Relationship Diagram (ERD)
 
