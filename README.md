@@ -22,7 +22,7 @@ The Bestie Beads website is a full-stack e-commerce application that allows cust
 <img src="./README_assets/JewelryComponentHierarchy.jpg" width="600" height="600">
 
 ## Technologies
-The Bestie Beads application is a full-stack application utilizing MongoDB, Express, React, and Node (MERN). Additional technologies used include Mongoose, Axios, and Bootstrap.  
+The Bestie Beads application is a full-stack application utilizing MongoDB, Express, React, and Node (MERN). Additional technologies used include Mongoose, Axios, UUID, and Bootstrap.  
 
 ## Getting Started
 Project tasks were recorded and managed using the Trello project management tool.<br>
@@ -34,7 +34,7 @@ The Bestie Beads app maintains a collection of product inventory records in Mong
 
 <img src="./README_assets/Piecelist.jpg" width="600" height="500" >
 
-On the individual piece's page, the user can view details about the bracelet, add the style to their cart for purchase, or write a review for the product.  The user is assigned an ID kept in local storage.   The items added to the cart are saved in the user's local storage as well. Reviews are stored in the database.  Both reviews and cart products render dynamically by the awesome power of React hooks as changes are made.
+On the individual piece's page, the user can view details about the bracelet, add the style to their cart for purchase, or write a review for the product.  The user is assigned a Universally Unique Identifier (UUID) kept in local storage.   The items added to the cart are saved in the user's local storage as well. Reviews are stored in the database.  Both reviews and cart products render dynamically by the awesome power of React hooks as changes are made.
 
 <img src="./README_assets/Piecepage.jpg" width="600" height="500" >
 
