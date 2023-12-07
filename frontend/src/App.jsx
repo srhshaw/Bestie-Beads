@@ -24,7 +24,7 @@ function App() {
         < Header />
         < Nav />
         < Main 
-          userId = {userId}
+          //userId = {userId}
         />
         < Footer />
       </div>

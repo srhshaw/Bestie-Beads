@@ -3,23 +3,13 @@ import { useParams, Link } from "react-router-dom"
 import axios from "axios"
 import { BASE_URL } from "../globals"
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap' 
+import './EditReviewForm.css'
 
 const EditReviewForm = ({review, setReviews, setShowEditReviewForm}) => {
     const [clickedButton, setClickedButton] = useState("")
 
     const updateReview = async(url, object) => {
-      
         const response = await axios.put(url, object)
-        // setReviews(prevReviews => {
-        //     console.log("Previous Reviews:", prevReviews);
-        //     const updatedReviews = [...prevReviews, response.data];
-        //     console.log("Updated Reviews:", updatedReviews);
-        //     return updatedReviews;
-        // });
-        // setShowReviewForm(false)
-        //alternative method for forcing page reload; better for multi-page apps
-        //window.location.reload()
-        
     }
 
     function handleSubmit(e) {
@@ -49,16 +39,9 @@ const EditReviewForm = ({review, setReviews, setShowEditReviewForm}) => {
         const response = await axios.delete(url)
     }
 
-    function handleDelete(id){
-        console.log(id)
-        // let endpointUrl = `${BASE_URL}/reviews/${review._id}`
-        // deleteReview(endpointUrl)
-        // setShowEditReviewForm(false)
-    }
-
 return (
     <div>
-        <div>
+        <div className="editReviewForm">
             <Form method = "post" onSubmit = {handleSubmit}>
                 <FormGroup>
                     <Label for="exampleEmail"> Name </Label>
@@ -80,8 +63,8 @@ return (
                     type="textarea"
                     />
                 </FormGroup>
-                <Button type = "submit" onClick={()=>{setClickedButton("update")}}>Update</Button>
-                <Button type = "submit" onClick={()=>{setClickedButton("delete")}}>Delete</Button>
+                <Button className= "editReviewFormButton" type = "submit" onClick={()=>{setClickedButton("update")}}>Update</Button>
+                <Button className= "editReviewFormButton" type = "submit" onClick={()=>{setClickedButton("delete")}}>Delete</Button>
             </Form>
         </div>
         

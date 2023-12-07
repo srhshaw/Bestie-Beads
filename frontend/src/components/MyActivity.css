@@ -1,0 +1,25 @@
+.editReviewButton{
+    width: 100px;
+    height: 50px;
+    background-color: navy;
+    color: white;
+    border: none;
+}
+.myOrdersList{
+    display: flex;
+    flex-direction: column;
+    margin-left: 4vw;
+    margin-top: 20px;;
+}
+.myReviewsList{
+    display: flex;
+    flex-direction: column;
+    margin-left: 4vw;
+    
+} 
+.reviewContent{
+    display: flex;
+    justify-content: space-between;
+    margin: 1vh;
+    
+}

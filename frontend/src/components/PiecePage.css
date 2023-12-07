@@ -1,0 +1,50 @@
+.detailImage{
+    box-shadow: 0 60px 80px rgba(0,0,0,0.60), 0 45px 26px rgba(0,0,0,0.14);
+} */
+.orderButton{
+    margin-left: 4vw;
+    text-wrap: wrap;
+    margin-right: 4vw;
+    text-align: justify;
+    width: 100px;
+    color: red;
+}
+.piece{
+    display: flex;
+    flex-direction: row;
+    margin-top: 8vh;
+    margin-left: 4vw;
+}
+.pieceButton{
+    color: white;
+}
+
+.pieceReviews{
+    margin-top: 5vh;
+    margin-left: 4vw;
+    margin-right: 4vw;
+}
+
+.pieceText{
+    height: 30vh;
+    padding: 15px;
+    font-size: x-large;
+    margin-left: 4vw;
+    text-wrap: wrap;
+    margin-right: 4vw;
+    text-align: justify;
+    background-color: #FCEB54;
+    box-shadow: 0 0 0 2px navy, 8px 8px 0 0 rgb(228, 126, 145);
+} 
+.pieceTextButton{
+    display: flex;
+    flex-direction: column;
+}
+.reviewDiv {
+    background: rgba(61,213,188);
+    border: 2px solid navy;
+    margin: 8px;
+    padding: 4px;
+    border-radius: 2%;
+    box-shadow: 0px 25px 20px -20px rgba(0, 0, 0, 0.45), 25px 0 20px -20px rgba(0, 0, 0, 0.45);
+}

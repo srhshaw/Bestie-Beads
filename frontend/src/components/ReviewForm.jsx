@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams, Link } from "react-router-dom"
 import axios from "axios"
-// import './PiecePage.css'
+import './ReviewForm.css'
 import { BASE_URL } from "../globals"
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap' 
 
@@ -40,7 +40,7 @@ const ReviewForm = ({pieceId, setReviews, setShowReviewForm}) => {
     }
 
 return (
-    <Form method = "post" onSubmit = {handleSubmit}>
+    <Form className="createReviewForm" method = "post" onSubmit = {handleSubmit}>
         <FormGroup>
             <Label for="exampleEmail"> Name </Label>
             <Input
@@ -61,7 +61,7 @@ return (
             type="textarea"
             />
         </FormGroup>
-        <Button type = "submit">
+        <Button className= "createReviewButton" type = "submit">
             Submit
         </Button>
     </Form>

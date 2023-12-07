@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom"
 import axios from "axios"
 import { BASE_URL } from "../globals"
 import EditReviewForm from "./EditReviewForm"
+import './MyActivity.css'
 
 export default function myActivity() {
     const [reviews, setReviews] = useState([])
@@ -39,20 +40,22 @@ export default function myActivity() {
 
 return(
     <div>
-        <div>
+        <div className="myOrdersList">
             <h3>My Orders</h3>
-
         </div>
         <div className="myReviewsList">
-    <h3>My Reviews</h3>
-    {reviews.map((review) => (
-        <div key={review._id}>
+            
+            <h3>My Reviews</h3>
+            {reviews.map((review) => (
+            <div className = "reviewContent" key={review._id}>
             <img className="review_piece_image" alt="Bracelet" src={review.piece.image} width="85"/>
             <h4>{review.piece.name}</h4>
             <h6>{review.text}</h6>
-            <button onClick={() => setShowEditReviewForm(showEditReviewForm === review._id ? null : review._id)}>
+            
+            <button className="editReviewButton" onClick={() => setShowEditReviewForm(showEditReviewForm === review._id ? null : review._id)}>
                 {showEditReviewForm === review._id ? "Cancel Edit" : "Edit"}
             </button>
+            
             {showEditReviewForm === review._id && (
                 <EditReviewForm 
                     review={review} 
@@ -60,9 +63,12 @@ return(
                     setShowEditReviewForm={setShowEditReviewForm}
                 />
             )}
+            
+            
         </div>
+       
     ))}
-</div>
+    </div>
 
         {/* <div className = "myReviewsList">
             <h3>My Reviews</h3>
