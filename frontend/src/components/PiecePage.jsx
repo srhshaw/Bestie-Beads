@@ -13,13 +13,21 @@ export default function PieceDetail({userId}) {
     const [reviews, setReviews] = useState([])
     const [showReviewForm, setShowReviewForm] = useState(false)
     const [pieceInCart, setPieceInCart] = useState(false)
-    let cartPieces= []
-    let cartPrices = []
+    const [clickedButton, setClickedButton] = useState("")
+
 
     useEffect(() => {
         const getPiece = async() => {
             const response = await axios.get(`${BASE_URL}/pieces/${id}`)
             setPiece(response.data)
+            const myCart = localStorage.getItem("myCart")
+            if (myCart) {
+                const oldCart = JSON.parse(myCart)
+                const found = oldCart.find((element) => element._id == response.data._id)
+                if (found) {
+                    setPieceInCart(true)
+                }
+            }
         }
         const getPieceReviews = async() => {
             const response = await axios.get(`${BASE_URL}/reviews/piece/${id}`)
@@ -28,19 +36,34 @@ export default function PieceDetail({userId}) {
         }
         getPiece()
         getPieceReviews()
+       
     }, [showReviewForm])
 
-    function handleClick(piece, price) {
-
-        cartPieces.push(piece)
-        cartPrices.push(price)
-        console.log(cartPieces)
-        console.log(cartPrices)
+    function handleAddToCart() {
+        const myCart = localStorage.getItem("myCart")
+        let newCart = []
+        if (myCart) {
+            let found = false
+            const oldCart = JSON.parse(myCart)
+            oldCart.forEach((element) => {
+                if (element._id != piece._id) {
+                    newCart.push(element)
+                } else {
+                    found = true
+                }
+            })
+            if (!found) {
+                newCart.push(piece)
+            }
+        } else {
+            newCart.push(piece)
+        }
+        localStorage.setItem("myCart", JSON.stringify(newCart))
     }
     
 return piece ? (
     <>
-        <div className = "piece">
+        <div className = "piece" >
                 <div className = "pieceImage">
                     <img className = "detailImage" src= {piece.image} width ="600"/>
                 </div>
@@ -55,16 +78,19 @@ return piece ? (
                         </ul>
                         <h4>{piece.description}</h4>
                     </div>
-                    <button className="orderButton" style={{color: "white", width: "10vw", height:"4vh",alignSelf: "flex-end", marginRight:"4vw", marginTop:"2vh", backgroundColor:"navy"}} onClick = {() => setPieceInCart(!pieceInCart)}>{pieceInCart ? "In Cart" : "Add to Cart"}</button>
-                        
-                    {/* onClick = {handleClick(piece._id, piece.price)} */}
-                    
-                    {/* <Cart pieces = {cartPieces} prices = {cartPrices}/> */}
+                    <button className="orderButton" style={{color: "white", width: "10vw", height:"4vh",alignSelf: "flex-end", marginRight:"4vw", marginTop:"2vh", backgroundColor:"navy"}} type = "submit" onClick={()=>{
+                        setClickedButton("addToCart")
+                        setPieceInCart(!pieceInCart)
+                        handleAddToCart()
+                        }}>{pieceInCart ? "Remove from Cart" : "Add to Cart"}</button>
                 </div>
         </div>
         <div className = "pieceReviews">
             <div className="pieceButton">
-                <button style={{color: "white", width: "10vw", height:"4vh",alignSelf: "flex-end", marginRight:"4vw",marginBottom:"1vh", backgroundColor:"navy"}} onClick = {() => setShowReviewForm(!showReviewForm)}>{showReviewForm ? "Return to Piece" : "Write a review"}</button>
+                <button style={{color: "white", width: "10vw", height:"4vh",alignSelf: "flex-end", marginRight:"4vw",marginBottom:"1vh", backgroundColor:"navy"}} type = "submit" onClick={()=>{
+                    setClickedButton("showReviewForm")
+                    setShowReviewForm(!showReviewForm)
+                }}>{showReviewForm ? "Return to Piece" : "Write a review"}</button>
                 {showReviewForm ? < ReviewForm pieceId = {piece._id} setReviews = {setReviews} setShowReviewForm = {setShowReviewForm}/> : null}
             </div>
             <div className = "pieceReviewsList">
