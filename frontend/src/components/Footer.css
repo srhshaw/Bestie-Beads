@@ -1,0 +1,21 @@
+/* /* body{
+    display: flex;
+    flex-direction: row;
+    color: navy;
+} */
+/* .footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-content: flex-end;
+} */
+.icons{
+    color: navy;
+
+}
+
+.leftFooter{
+    display: flex;
+    font-size: 15px;
+    color: navy;
+} */

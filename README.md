@@ -1,4 +1,4 @@
-# eCommerce-Site - Beaded Jewelry
+# eCommerce-Site - Bestie Beads
 <p align="center">
   <img src="./README_assets/BeadImage.jpg" width="600" height="400" >
 </p>
