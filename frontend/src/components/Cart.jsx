@@ -36,6 +36,7 @@ const Cart = ({pieces, prices}) => {
             <div className='total'>
                 <h3>Cart Total: ${total}</h3>
             </div>
+            <button className="submitButton" style={{color: "white", width: "10vw", height:"4vh",alignSelf: "flex-end", marginRight:"4vw", marginTop:"2vh", backgroundColor:"navy"}} type = "submit" onClick={()=>{}}>Submit Order</button>
         </div>
     )
 }
