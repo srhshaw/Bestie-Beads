@@ -4,8 +4,8 @@ const Footer = () => {
             <div className="designFooter">
                 <h6>Website design by Shanda Shaw</h6>
                 <div className = "icons">
-                    <a href= "https://www.linkedin.com/in/shandashaw/"><i className="fa-brands fa-linkedin fa-xl"></i></a>
-                    <a href = "https://github.com/srhshaw"><i className="fa-brands fa-square-github fa-xl"></i></a>
+                    <a href= "https://www.linkedin.com/in/shandashaw/" target="_blank"><i className="fa-brands fa-linkedin fa-xl"></i></a>
+                    <a href = "https://github.com/srhshaw" target="_blank" ><i className="fa-brands fa-square-github fa-xl"></i></a>
                 </div>
             </div>
             <div className = "creditFooter">

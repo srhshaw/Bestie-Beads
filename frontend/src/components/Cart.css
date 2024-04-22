@@ -16,3 +16,13 @@
     justify-content: flex-end;
     margin-right: 1vw;
 }
+
+button.remove{
+    display: inline;
+    background-color: transparent;
+    border: none;
+    color: navy;
+}
+button.remove:hover{
+    color: white;
+}

@@ -4,6 +4,7 @@ import './Cart.css'
 const Cart = ({pieces, prices}) => {
     const [cart, setCart] = useState([])
     const [total, setTotal] = useState(0)
+
     useEffect(() => {
         const getCart = async() => {
             const myCart = localStorage.getItem("myCart")
@@ -19,8 +20,21 @@ const Cart = ({pieces, prices}) => {
         }
         getCart()
     },[])
+//PLAYPEN
+    function handleRemoveFromCart(id) {
+        const myCart = localStorage.getItem("myCart")
+        let newCart = []
+            const oldCart = JSON.parse(myCart)
+            oldCart.forEach((element) => {
+                if (element._id != id) {
+                    newCart.push(element)
+                }
+            })
+        localStorage.setItem("myCart", JSON.stringify(newCart))
+        setCart(newCart)
+    }
 
-
+//PLAYPEN END
     return(
         <div className = "cart">
             <div>
@@ -28,6 +42,9 @@ const Cart = ({pieces, prices}) => {
             </div>
             {cart.map((cartPiece) =>
             <div key = {cartPiece._id} className = "cartContent">
+                    <button className="remove" onClick={()=>{
+                        handleRemoveFromCart(cartPiece._id)
+                    }}>X</button>
                     <img className="cart_piece_image" alt="Bracelet" src={cartPiece.image} width="85"/>
                     <h4>{cartPiece.name}</h4>
                     <h4>${cartPiece.price}</h4>
