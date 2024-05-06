@@ -3,7 +3,7 @@ const {Schema} = require('mongoose')
 
 const reviewSchema = new Schema(
     {
-        //ref: IS TO Piece MODEL
+        //ref: is to Piece model
         piece: {type: Schema.Types.ObjectId, ref: 'Piece'},
         userName: {type: String, required: true},
         userId: {type: String, required: true},

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import './Cart.css'
+import { Form, FormGroup, Label, Input, Button, Row, Col } from 'reactstrap'
 
 const Cart = ({pieces, prices}) => {
     const [cart, setCart] = useState([])
@@ -36,24 +37,79 @@ const Cart = ({pieces, prices}) => {
 
 //PLAYPEN END
     return(
-        <div className = "cart">
+        //CONTACT FORM PLAYPEN
+        <div className = "order"> 
             <div>
-                <h3>My Cart</h3>
+                <h3>Order Contact</h3>
             </div>
-            {cart.map((cartPiece) =>
-            <div key = {cartPiece._id} className = "cartContent">
-                    <button className="remove" onClick={()=>{
-                        handleRemoveFromCart(cartPiece._id)
-                    }}>X</button>
-                    <img className="cart_piece_image" alt="Bracelet" src={cartPiece.image} width="85"/>
-                    <h4>{cartPiece.name}</h4>
-                    <h4>${cartPiece.price}</h4>
+            <Form className= "contactInfo">
+                <Row>
+                    <Col md={6}>
+                    <FormGroup>
+                        <Label for="firstName">
+                        First Name
+                        </Label>
+                        <Input
+                        id="firstName"
+                        name="firstName"
+                        type="text"
+                        />
+                    </FormGroup>
+                    </Col>
+                    <Col md={6}>
+                    <FormGroup>
+                        <Label for="lastName">
+                        Last Name
+                        </Label>
+                        <Input
+                        id="lastName"
+                        name="lastName"
+                        type="text"
+                        />
+                    </FormGroup>
+                    </Col>
+                </Row>
+                <FormGroup>
+                    <Label for="email">
+                    Email
+                    </Label>
+                    <Input
+                    id="email"
+                    name="email"
+                    />
+                </FormGroup>
+                <FormGroup>
+                    <Label for="address">
+                    Address
+                    </Label>
+                    <Input
+                    id="address"
+                    name="address"
+                    placeholder="1234 Main St.  Austin, TX  78123"
+                    />
+                </FormGroup>
+            </Form>
+
+            <div className = "cart">
+                <div>
+                    <h3>My Cart</h3>
+                </div>
+                {cart.map((cartPiece) =>
+                <div key = {cartPiece._id} className = "cartContent">
+                        <button className="remove" onClick={()=>{
+                            handleRemoveFromCart(cartPiece._id)
+                        }}>X</button>
+                        <img className="cart_piece_image" alt="Bracelet" src={cartPiece.image} width="85"/>
+                        <h4>{cartPiece.name}</h4>
+                        <h4>${cartPiece.price}</h4>
+                </div>
+                )}
+                <div className='total'>
+                    <h3>Cart Total: ${total}</h3>
+                </div>
+                <button className="submitButton" style={{color: "white", width: "10vw", height:"4vh",alignSelf: "flex-end", marginRight:"4vw", marginTop:"2vh", backgroundColor:"navy"}} type = "submit" onClick={()=>{}}>Submit Order</button>
             </div>
-            )}
-            <div className='total'>
-                <h3>Cart Total: ${total}</h3>
-            </div>
-            <button className="submitButton" style={{color: "white", width: "10vw", height:"4vh",alignSelf: "flex-end", marginRight:"4vw", marginTop:"2vh", backgroundColor:"navy"}} type = "submit" onClick={()=>{}}>Submit Order</button>
+
         </div>
     )
 }
