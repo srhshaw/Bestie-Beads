@@ -12,7 +12,7 @@ const main = async () => {
             firstName: 'Margot',
             lastName: 'Muñoz',
             email: 'margotmuñoz@email.com',
-            address: "2 Cousin St. Austin, TX 78758",
+            address: '2 Cousin St. Austin, TX 78758',
         },
         {
             userId: '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb7d',
