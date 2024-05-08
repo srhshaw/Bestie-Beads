@@ -34,15 +34,29 @@ const Cart = ({pieces, prices}) => {
         localStorage.setItem("myCart", JSON.stringify(newCart))
         setCart(newCart)
     }
-
 //PLAYPEN END
+
+    function handleSave(e) {
+        e.preventDefault()
+        const contactForm = e.target
+        const contactFormData = new FormData(contactForm)
+        const contactFormJsObj = Object.fromEntries(contactFormData.entries())
+        console.log(contactFormJsObj)
+        if (contactFormJsObj.firstName === "" || contactFormJsObj.lastName ==="" || contactFormJsObj.email === "" || contactFormJsObj.address === ""){
+            alert("Please enter valid contact information.")
+        } else {
+            localStorage.setItem("contactInfo", JSON.stringify(contactFormJsObj))
+        }
+        
+    }
+
     return(
         //CONTACT FORM PLAYPEN
         <div className = "order"> 
             <div>
                 <h3>Order Contact</h3>
             </div>
-            <Form className= "contactInfo">
+            <Form className= "contactInfo" method= "post" onSubmit={handleSave}>
                 <Row>
                     <Col md={6}>
                     <FormGroup>
@@ -88,6 +102,9 @@ const Cart = ({pieces, prices}) => {
                     placeholder="1234 Main St.  Austin, TX  78123"
                     />
                 </FormGroup>
+                <Button className= "saveContactInfoButton" type = "submit">
+                Save
+                </Button>
             </Form>
 
             <div className = "cart">
