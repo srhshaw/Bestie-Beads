@@ -26,3 +26,6 @@ button.remove{
 button.remove:hover{
     color: white;
 }
+.offDisplay{
+    display: none;
+}
