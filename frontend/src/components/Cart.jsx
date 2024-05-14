@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import './Cart.css'
 import { Form, FormGroup, Label, Input, Button, Row, Col } from 'reactstrap'
 import { Link } from "react-router-dom"
+import { BASE_URL } from "../globals"
+import axios from "axios"
 
 const Cart = ({pieces, prices}) => {
     const [cart, setCart] = useState([])
@@ -36,7 +38,11 @@ const Cart = ({pieces, prices}) => {
         getCart()
         getDeliveryInfo()
     },[])
-//PLAYPEN
+
+    const createOrder = async(url, object) => {
+        const response = await axios.post(url, object)
+    }
+
     function handleRemoveFromCart(id) {
         const myCart = localStorage.getItem("myCart")
         let newCart = []
@@ -49,14 +55,12 @@ const Cart = ({pieces, prices}) => {
         localStorage.setItem("myCart", JSON.stringify(newCart))
         setCart(newCart)
     }
-//PLAYPEN END
 
     function handleSave(e) {
         e.preventDefault()
         const contactForm = e.target
         const contactFormData = new FormData(contactForm)
         const contactFormJsObj = Object.fromEntries(contactFormData.entries())
-        console.log(contactFormJsObj)
         if (contactFormJsObj.firstName === "" || contactFormJsObj.lastName ==="" || contactFormJsObj.email === "" || contactFormJsObj.address === ""){
             alert("Please enter valid contact information.")
         } else {
@@ -65,10 +69,22 @@ const Cart = ({pieces, prices}) => {
             hideForm()
             showDeliverTo()
         }
-        
     }
 
-    //REPETITIVE CODE...HOW TO CLEAN UP?  TOGGLE CONFUSING. SHOULD THE VARIABLES BE MADE USEEFFECT VARIABLES THEN ADD/REMOVE CLASS AT ONCLICKS OR HANDLER FUNCTIONS?
+    function handleSubmit(){
+        if(deliveryInfo != {} && cart != []){
+            const order = deliveryInfo
+            order.userId = localStorage.getItem("userId")
+            order.piece = cart
+            order.orderTotal = total
+            console.log(order)
+            let endpointUrl = `${BASE_URL}/orders`
+            createOrder(endpointUrl, order)
+        } else {
+            alert("This order is missing information.  Please check that Order Contact and My Cart info are complete and submit again.")
+        }
+        
+    }
     function hideForm(){
         const contactInput = document.getElementById("contactInput")
         contactInput.classList.add("offDisplay")
@@ -87,9 +103,7 @@ const Cart = ({pieces, prices}) => {
     }
 
     return(
-        //CONTACT FORM PLAYPEN
         <div className = "order"> 
-            {/* <div id = "contactInput"> */}
                 <div>
                     <h3>Order Contact</h3>
                 </div>
@@ -156,7 +170,6 @@ const Cart = ({pieces, prices}) => {
                         Edit
                     </Button>
                 </div>
-            {/* </div> */}
             <div className = "cart">
                 <div>
                     <h3>My Cart</h3>
@@ -175,11 +188,11 @@ const Cart = ({pieces, prices}) => {
                     <h3>Cart Total: ${total}</h3>
                 </div>
                 <Link to ="/pieces">
-                <button className="shopButton" style={{color: "white", width: "10vw", height:"4vh",alignSelf: "flex-end", marginRight:"4vw", marginTop:"2vh", backgroundColor:"navy"}} type = "button" onClick={()=>{}}>
+                <button className="shopButton" style={{color: "white", width: "10vw", height:"4vh",alignSelf: "flex-end", marginRight:"4vw", marginTop:"2vh", backgroundColor:"navy"}} type = "button" >
                     Keep Shopping
                 </button>
                 </Link>
-                <button className="submitButton" style={{color: "white", width: "10vw", height:"4vh",alignSelf: "flex-end", marginRight:"4vw", marginTop:"2vh", backgroundColor:"navy"}} type = "submit" onClick={()=>{}}>Submit Order</button>
+                <button className="submitButton" style={{color: "white", width: "10vw", height:"4vh",alignSelf: "flex-end", marginRight:"4vw", marginTop:"2vh", backgroundColor:"navy"}} type = "submit" onClick={()=>{handleSubmit()}}>Submit Order</button>
             </div>
 
         </div>
