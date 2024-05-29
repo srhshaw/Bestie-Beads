@@ -4,6 +4,7 @@ import { Form, FormGroup, Label, Input, Button, Row, Col } from 'reactstrap'
 import { Link } from "react-router-dom"
 import { BASE_URL } from "../globals"
 import axios from "axios"
+import OrderConfirm from "./OrderConfirm"
 
 const Cart = ({pieces, prices}) => {
     const [cart, setCart] = useState([])
@@ -54,6 +55,12 @@ const Cart = ({pieces, prices}) => {
             })
         localStorage.setItem("myCart", JSON.stringify(newCart))
         setCart(newCart)
+
+        let total = 0
+            newCart.forEach(element => 
+                total += element.price
+            )
+        setTotal(total)
     }
 
     function handleSave(e) {

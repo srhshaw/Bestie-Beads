@@ -1,6 +1,14 @@
 const Order = require('../models/order')
 const Piece = require('../models/piece')
 const Review = require('../models/review')
+const nodemailer = require('nodemailer')
+const emailConfig = require('../emailConfig')
+
+const siteEmailService = emailConfig.siteEmailService
+const siteEmailAddress = emailConfig.siteEmailAddress
+const siteEmailPassword = emailConfig.siteEmailPassword
+const makerEmailAddress = emailConfig.makerEmailAddress
+
 
     module.exports = { getAllOrders, getOrdersByUserId, getOneOrder, createOrder, updateOrder, deleteOrder,getAllPieces, getOnePiece, createPiece, updatePiece, deletePiece, getAllReviews, getReviewsByPieceId, getReviewsByUserId, getOneReview, createReview, updateReview, deleteReview
 }
@@ -44,9 +52,34 @@ async function createOrder(req, res){
     try{
         const order =  await new Order(req.body)
         await order.save()
+
+        const transporter = nodemailer.createTransport({
+            service: siteEmailService,
+            auth: {
+                user: siteEmailAddress,
+                pass: siteEmailPassword
+            }
+        })
+
+        const mailOptions = {
+            from: siteEmailAddress,
+            to: makerEmailAddress,
+            subject: 'New Bestie Beads order!',
+            text: 'A new Bestie Beads order has been submitted online.  Please check the order database.'
+        }
+
+        transporter.sendMail(mailOptions, function(error, info){
+            if (error){
+                console.log(error);
+            }else{
+                console.log("Email sent: " + info.response)
+            }
+        })
+
         return res.status(201).json({
             order
         })
+
     } catch (error) {
         return res.status(500).send(error.message)
     }
