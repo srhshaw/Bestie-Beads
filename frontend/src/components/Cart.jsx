@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import './Cart.css'
 import { Form, FormGroup, Label, Input, Button, Row, Col } from 'reactstrap'
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { BASE_URL } from "../globals"
 import axios from "axios"
 import OrderConfirm from "./OrderConfirm"
@@ -10,6 +10,8 @@ const Cart = ({pieces, prices}) => {
     const [cart, setCart] = useState([])
     const [total, setTotal] = useState(0)
     const [deliveryInfo, setdeliveryInfo] = useState({})
+
+    let navigate = useNavigate()
 
     useEffect(() => {
         const getCart = async() => {
@@ -22,6 +24,10 @@ const Cart = ({pieces, prices}) => {
                     total += element.price
                 )
                 setTotal(total)
+                //This isn't working right.
+                if (cart != []){
+                    hideEmptyCartMsg()
+                }
             }
         }
         const getDeliveryInfo = async() => {
@@ -42,6 +48,17 @@ const Cart = ({pieces, prices}) => {
 
     const createOrder = async(url, object) => {
         const response = await axios.post(url, object)
+
+        if(response.status === 201){
+            const myCart = localStorage.getItem("myCart")
+            let newCart = []
+            localStorage.setItem("myCart", JSON.stringify(newCart))
+            setCart(newCart)
+            setTotal(0)
+            navigate('/orderconfirm', {replace: true})
+        } else {
+            alert("Order could not be submitted. Please try again or email BestieBeads@email.com for assistance.")
+        }
     }
 
     function handleRemoveFromCart(id) {
@@ -87,6 +104,8 @@ const Cart = ({pieces, prices}) => {
             console.log(order)
             let endpointUrl = `${BASE_URL}/orders`
             createOrder(endpointUrl, order)
+            // SEE NEW REDIRECT CODE IN CREATEORDER FUNCTION
+            
         } else {
             alert("This order is missing information.  Please check that Order Contact and My Cart info are complete and submit again.")
         }
@@ -107,6 +126,14 @@ const Cart = ({pieces, prices}) => {
     function showDeliverTo(){
         const deliverTo = document.getElementById("deliverTo")
         deliverTo.classList.remove("offDisplay")
+    }
+    function hideEmptyCartMsg(){
+        const emptyMsg = document.getElementById("emptyCart")
+        emptyMsg.classList.add("offDisplay")
+    }
+    function showEmptyCartMsg(){
+        const emptyMsg = document.getElementById("emptyCart")
+        emptyMsg.classList.remove("offDisplay")
     }
 
     return(
@@ -191,6 +218,11 @@ const Cart = ({pieces, prices}) => {
                         <h4>${cartPiece.price}</h4>
                 </div>
                 )}
+                <div id='emptyCart'>
+                    <p>
+                        Your cart is empty.
+                    </p>
+                </div>
                 <div className='total'>
                     <h3>Cart Total: ${total}</h3>
                 </div>
@@ -201,7 +233,6 @@ const Cart = ({pieces, prices}) => {
                 </Link>
                 <button className="submitButton" style={{color: "white", width: "10vw", height:"4vh",alignSelf: "flex-end", marginRight:"4vw", marginTop:"2vh", backgroundColor:"navy"}} type = "submit" onClick={()=>{handleSubmit()}}>Submit Order</button>
             </div>
-
         </div>
     )
 }

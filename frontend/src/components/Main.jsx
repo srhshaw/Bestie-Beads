@@ -5,6 +5,7 @@ import PieceList from './PieceList.jsx'
 import PiecePage from './PiecePage.jsx'
 import MyActivity from './MyActivity.jsx'
 import Cart from './Cart.jsx'
+import OrderConfirm from './OrderConfirm.jsx'
 
 const Main = () => {
     return(
@@ -16,6 +17,7 @@ const Main = () => {
                 <Route path = '/pieces/:id' element={<PiecePage/>} />
                 <Route path = '/myactivity' element={<MyActivity/>} />
                 <Route path = '/cart' element={<Cart/>} />
+                <Route path = '/orderconfirm' element={<OrderConfirm/>} />
             </Routes>
         </div>
     )

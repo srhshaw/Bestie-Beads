@@ -1,13 +1,14 @@
 import './OrderConfirm.css'
 
-const OrderConfirmation = () => {
+const OrderConfirm = () => {
     return(
         <div className='confirmation'>
             <p>
-                Order submitted!  Thank you for your purchase.  
+                Order submitted!  Thank you for supporting Bestie Beads.
             </p>
+            
         </div>
     )
 }
 
-export default OrderConfirmation
+export default OrderConfirm
