@@ -4,9 +4,9 @@ const OrderConfirm = () => {
     return(
         <div className='confirmation'>
             <p>
-                Order submitted!  Thank you for supporting Bestie Beads.
+                Order submitted.  Thank you for supporting Bestie Beads!
             </p>
-            
+
         </div>
     )
 }

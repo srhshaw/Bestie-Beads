@@ -24,8 +24,9 @@ const Cart = ({pieces, prices}) => {
                     total += element.price
                 )
                 setTotal(total)
-                //This isn't working right.
-                if (cart != []){
+                if (cart.length == 0){
+                    showEmptyCartMsg()
+                } else {
                     hideEmptyCartMsg()
                 }
             }
@@ -78,6 +79,12 @@ const Cart = ({pieces, prices}) => {
                 total += element.price
             )
         setTotal(total)
+
+        if (newCart.length == 0){
+            showEmptyCartMsg()
+        } else {
+            hideEmptyCartMsg()
+        }
     }
 
     function handleSave(e) {
@@ -101,15 +108,11 @@ const Cart = ({pieces, prices}) => {
             order.userId = localStorage.getItem("userId")
             order.piece = cart
             order.orderTotal = total
-            console.log(order)
             let endpointUrl = `${BASE_URL}/orders`
-            createOrder(endpointUrl, order)
-            // SEE NEW REDIRECT CODE IN CREATEORDER FUNCTION
-            
+            createOrder(endpointUrl, order)  
         } else {
             alert("This order is missing information.  Please check that Order Contact and My Cart info are complete and submit again.")
         }
-        
     }
     function hideForm(){
         const contactInput = document.getElementById("contactInput")
@@ -218,7 +221,7 @@ const Cart = ({pieces, prices}) => {
                         <h4>${cartPiece.price}</h4>
                 </div>
                 )}
-                <div id='emptyCart'>
+                <div id = "emptyCart">
                     <p>
                         Your cart is empty.
                     </p>
