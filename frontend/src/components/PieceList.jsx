@@ -20,7 +20,7 @@ const PieceList = () => {
         <div className = "piece_container">
             {pieces.map((piece) => (
             <Link key = {piece._id} to = {`/pieces/${piece._id}`}>
-            <Card style={{width: '24rem'}}>
+            <Card>
                 <img className = "piece_image" alt="Bracelet" src={piece.image}/>
                 <CardBody>
                     <CardTitle tag="h5">{piece.name}</CardTitle>

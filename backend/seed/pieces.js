@@ -7,7 +7,7 @@ const main = async() => {
     const pieces = [
         {
         image: "https://i.imgur.com/RsDlSKA.jpg",
-        name: "Cloudy Rainbow Bracelet",
+        name: "Cloudy Rainbow",
         price: 3,
         details: ["Clay beads", "Slip-on, stretch elastic"],
         description: "Good vibes only!  The brighter the better.  Featuring a slip-on, stretch style in vibrant, fun shades.  Can be worn together with other bracelets from the collection- mix and match for your favorite combinations or share with your friends!  Each bracelet is handmade and totally unique!"
