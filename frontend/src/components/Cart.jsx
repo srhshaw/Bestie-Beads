@@ -24,7 +24,7 @@ const Cart = ({pieces, prices}) => {
                     total += element.price
                 )
                 setTotal(total)
-                if (cart.length == 0){
+                if (cart.length === 0){
                     showEmptyCartMsg()
                 } else {
                     hideEmptyCartMsg()
@@ -80,7 +80,7 @@ const Cart = ({pieces, prices}) => {
             )
         setTotal(total)
 
-        if (newCart.length == 0){
+        if (newCart.length === 0){
             showEmptyCartMsg()
         } else {
             hideEmptyCartMsg()
