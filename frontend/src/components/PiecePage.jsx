@@ -76,7 +76,7 @@ return piece ? (
                         </ul>
                         <h4>{piece.description}</h4>
                     </div>
-                    <button className="orderButton" style={{color: "white", width: "10vw", height:"4vh",alignSelf: "flex-end", marginRight:"4vw", marginTop:"2vh", backgroundColor:"navy"}} type = "submit" onClick={()=>{
+                    <button className="orderButton" type = "submit" onClick={()=>{
                         setClickedButton("addToCart")
                         setPieceInCart(!pieceInCart)
                         handleAddToCart()
@@ -84,8 +84,8 @@ return piece ? (
                 </div>
         </div>
         <div className = "pieceReviews">
-            <div className="pieceButton">
-                <button className= "reviewButton" style={{color: "white", width: "10vw", height:"4vh",alignSelf: "flex-end", marginRight:"4vw",marginBottom:"1vh", backgroundColor:"navy"}} type = "submit" onClick={()=>{
+            <div>
+                <button className= "reviewButton" type = "submit" onClick={()=>{
                     setClickedButton("showReviewForm")
                     setShowReviewForm(!showReviewForm)
                 }}>{showReviewForm ? "Return to Piece" : "Write a review"}</button>

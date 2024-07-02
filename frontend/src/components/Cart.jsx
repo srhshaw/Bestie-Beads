@@ -121,14 +121,22 @@ const Cart = ({pieces, prices}) => {
     function showForm(){
         const contactInput = document.getElementById("contactInput")
         contactInput.classList.remove("offDisplay")
+        document.getElementById("firstName").defaultValue = deliveryInfo.firstName
+        document.getElementById("lastName").defaultValue = deliveryInfo.lastName
+        document.getElementById("email").defaultValue = deliveryInfo.email
+        document.getElementById("address").defaultValue = deliveryInfo.address
     }
     function hideDeliverTo(){
         const deliverTo = document.getElementById("deliverTo")
         deliverTo.classList.add("offDisplay")
+        const editButton = document.getElementById("editContactInfoButton")
+        editButton.classList.add("offDisplay")
     }
     function showDeliverTo(){
         const deliverTo = document.getElementById("deliverTo")
         deliverTo.classList.remove("offDisplay")
+        const editButton = document.getElementById("editContactInfoButton")
+        editButton.classList.remove("offDisplay")
     }
     function hideEmptyCartMsg(){
         const emptyMsg = document.getElementById("emptyCart")
@@ -190,17 +198,17 @@ const Cart = ({pieces, prices}) => {
                         placeholder="1234 Main St.  Austin, TX  78123"
                         />
                     </FormGroup>
-                    <Button className= "saveContactInfoButton" type= "submit">
+                    <Button className= "cartButton" id= "saveContactInfoButton" type= "submit">
                     Save
                     </Button>
                 </Form>
-                <div id = "deliverTo">
-                    <p>
+                <div>
+                    <p id = "deliverTo">
                         {deliveryInfo.firstName + " " + deliveryInfo.lastName}<br />
                         {deliveryInfo.email}<br />
                         {deliveryInfo.address}
                     </p>
-                    <Button className= "editContactButton" type = "button" onClick={()=>{
+                    <Button className= "cartButton" id="editContactInfoButton" type = "button" onClick={()=>{
                                 hideDeliverTo()
                                 showForm()
                                 }}>
@@ -230,11 +238,11 @@ const Cart = ({pieces, prices}) => {
                     <h3>Cart Total: ${total}</h3>
                 </div>
                 <Link to ="/pieces">
-                <button className="shopButton" style={{color: "white", width: "10vw", height:"4vh",alignSelf: "flex-end", marginRight:"4vw", marginTop:"2vh", backgroundColor:"navy"}} type = "button" >
+                <button className= "cartButton" type = "button" >
                     Keep Shopping
                 </button>
                 </Link>
-                <button className="submitButton" style={{color: "white", width: "10vw", height:"4vh",alignSelf: "flex-end", marginRight:"4vw", marginTop:"2vh", backgroundColor:"navy"}} type = "submit" onClick={()=>{handleSubmit()}}>Submit Order</button>
+                <button className = "cartButton" type = "submit" onClick={()=>{handleSubmit()}}>Submit Order</button>
             </div>
         </div>
     )

@@ -1,13 +1,19 @@
+button{
+    background-color: navy;
+    color: white;
+    width: 14vw;
+    height: 6vh;
+    align-self: flex-end;
+    font-size: large;
+}
+
 .detailImage{
     box-shadow: 0 60px 80px rgba(0,0,0,0.60), 0 45px 26px rgba(0,0,0,0.14);
 }
 
 .orderButton{
-    margin-left: 4vw;
+    margin: 2vh 4vw;
     text-wrap: wrap;
-    margin-right: 4vw;
-    width: 100px;
-    color: white;
 }
 
 .piece{
@@ -17,10 +23,6 @@
     margin-left: 4vw;
 }
 
-.pieceButton{
-    color: white;
-}
-
 .pieceReviews{
     margin-top: 5vh;
     margin-left: 4vw;
@@ -28,7 +30,6 @@
 }
 
 .pieceText{
-    /* height: 30vh; */
     padding: 15px;
     font-size: x-large;
     margin-left: 4vw;
@@ -44,6 +45,10 @@
     flex-direction: column;
 }
 
+.reviewButton{
+    margin-bottom: 1vh;
+}
+
 .reviewDiv {
     background: rgba(61,213,188);
     border: 2px solid navy;
@@ -55,6 +60,9 @@
 
 
 @media screen and (max-width: 1200px) and (min-width: 769px){
+    button{
+        font-size: medium;
+    }
     .detailImage{
         width:40vw;
     }
@@ -68,7 +76,10 @@
         font-size: 13px;
     }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px){
+    button{
+        font-size: small;
+    }
     .detailImage{
         width:40vw;
     }
@@ -80,5 +91,11 @@
     }
     .reviewerName, p{
         font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 420px){
+    button{
+        font-size: xx-small;
     }
 }
