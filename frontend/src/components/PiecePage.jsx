@@ -67,8 +67,8 @@ return piece ? (
                 </div>
                 <div className="pieceTextButton">
                     <div className = "pieceText">
-                        <h2>{piece.name}</h2>
-                        <h2>${piece.price}</h2>
+                        <h2 className = "pieceName">{piece.name}</h2>
+                        <h2 className = "piecePrice">${piece.price}</h2>
                         <ul>
                         {piece.details.map((detail, id)=> (
                             <li key = {id}>{detail}</li>
@@ -85,7 +85,7 @@ return piece ? (
         </div>
         <div className = "pieceReviews">
             <div className="pieceButton">
-                <button style={{color: "white", width: "10vw", height:"4vh",alignSelf: "flex-end", marginRight:"4vw",marginBottom:"1vh", backgroundColor:"navy"}} type = "submit" onClick={()=>{
+                <button className= "reviewButton" style={{color: "white", width: "10vw", height:"4vh",alignSelf: "flex-end", marginRight:"4vw",marginBottom:"1vh", backgroundColor:"navy"}} type = "submit" onClick={()=>{
                     setClickedButton("showReviewForm")
                     setShowReviewForm(!showReviewForm)
                 }}>{showReviewForm ? "Return to Piece" : "Write a review"}</button>
@@ -95,7 +95,7 @@ return piece ? (
                 <h3>Customer Reviews</h3> 
                 {reviews.map((review)=> (
                     <div className= "reviewDiv" key = {review.userId}>
-                        <h6> {review.userName} </h6>
+                        <h6 className = "reviewerName"> {review.userName} </h6>
                         <p>{review.text}</p>
                     </div>
                 ))}
