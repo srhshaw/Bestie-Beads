@@ -51,8 +51,8 @@ return(
             {reviews.map((review) => (
             <div className = "reviewContent" key={review._id}>
                 <img className="review_piece_image" alt="Bracelet" src={review.piece.image} width="85"/>
-                <h4>{review.piece.name}</h4>
-                <h6>{review.text}</h6>
+                <h4 className="reviewPiece">{review.piece.name}</h4>
+                <p className="reviewText">{review.text}</p>
             
                 <button className="editReviewButton" onClick={() => setShowEditReviewForm(showEditReviewForm === review._id ? null : review._id)}>
                     {showEditReviewForm === review._id ? "Cancel Edit" : "Edit"}
