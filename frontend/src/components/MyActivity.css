@@ -1,6 +1,6 @@
 .editReviewButton{
-    width: 100px;
-    height: 50px;
+    width: 10vw;
+    height: 6vh;
     background-color: navy;
     color: white;
     border: none;
@@ -19,6 +19,7 @@ h3{
     flex-direction: column;
     margin-left: 4vw;
     margin-right: 4vw;
+    margin-top: 2vh;
     
 } 
 .orderContent, .reviewContent{
@@ -44,14 +45,23 @@ h3{
     padding: 1vh 2vw;
 }
 .reviewPiece{
-    margin: 2vh 20px;
+    margin-top: 2vh;
+    margin-right: 3vw;
     text-align: left; 
 }
+.review_piece_image{
+    margin-right: 3vw;
+}
 p.reviewText{
-    margin: 2vh 20px;
-    word-wrap: wrap;
+    width: 35vw;
+    margin-top: 2vh;
+    margin-right: 3vw;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
     overflow: hidden;
     text-overflow: ellipsis;
+    text-align: justify;
 }
 
 @media screen and (max-width: 479px){
