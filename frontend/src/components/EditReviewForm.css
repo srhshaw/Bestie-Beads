@@ -6,4 +6,25 @@
 
 .editReviewFormButton{
   background-color: navy;
+  width: 10vw;
+  height: 6vh;
+  margin: 2px;
+}
+.form{
+  margin-right: 0;
+  float: right;
+  width: 300px;
+  padding: 5px;
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.formButtons{
+  float: right;
+}
+
+#nameField, #reviewTextField{
+  width: 50vw;
+  font-size: medium;
 }

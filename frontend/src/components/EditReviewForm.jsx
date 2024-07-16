@@ -39,34 +39,33 @@ const EditReviewForm = ({review, setReviews, setShowEditReviewForm}) => {
     }
 
 return (
-    <div>
-        <div className="editReviewForm">
-            <Form method = "post" onSubmit = {handleSubmit}>
-                <FormGroup>
-                    <Label for="exampleEmail"> Name </Label>
-                    <Input
-                    id="exampleName"
-                    name="userName"
-                    defaultValue={review.userName}
-                    type="text"
-                    />
-                </FormGroup>  
-                <FormGroup>
-                    <Label for="exampleText">
-                    Review
-                    </Label>
-                    <Input
-                    id="exampleText"
-                    name="text"
-                    defaultValue={review.text}
-                    type="textarea"
-                    />
-                </FormGroup>
+    <div className="editReviewForm">
+        <Form className= "form" method = "post" onSubmit = {handleSubmit}>
+            <FormGroup>
+                <Label for="exampleEmail"> Name </Label>
+                <Input
+                id="nameField"
+                name="userName"
+                defaultValue={review.userName}
+                type="text"
+                />
+            </FormGroup>  
+            <FormGroup>
+                <Label for="exampleText">
+                Review
+                </Label>
+                <Input
+                id="reviewTextField"
+                name="text"
+                defaultValue={review.text}
+                type="textarea"
+                />
+            </FormGroup>
+            <div className="formButtons">
                 <Button className= "editReviewFormButton" type = "submit" onClick={()=>{setClickedButton("update")}}>Update</Button>
                 <Button className= "editReviewFormButton" type = "submit" onClick={()=>{setClickedButton("delete")}}>Delete</Button>
-            </Form>
-        </div>
-        
+            </div>
+        </Form>
     </div>
 )
 }

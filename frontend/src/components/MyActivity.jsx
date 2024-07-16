@@ -6,7 +6,7 @@ import './MyActivity.css'
 
 export default function myActivity() {
     const [reviews, setReviews] = useState([])
-    const [showEditReviewForm, setShowEditReviewForm] = useState(false)
+    const [review_idInEdit, setReview_IdInEdit] = useState(null)
     const [orders, setOrders] = useState([])
 
     useEffect(() => {
@@ -25,8 +25,18 @@ export default function myActivity() {
        
         getOrders()
         getUserReviews()
-    }, [showEditReviewForm])
+    }, [review_idInEdit])
     
+    function offDisplay(){
+        const reviewText = document.getElementById("reviewText")
+        reviewText.classList.remove("onDisplay")
+        reviewText.classList.add("offDisplay")
+    }
+    function onDisplay(){
+        const reviewText = document.getElementById("reviewText")
+        reviewText.classList.remove("offDisplay")
+        reviewText.classList.add("onDisplay")
+    }
 
 return(
     <div>
@@ -37,7 +47,7 @@ return(
                     <h4>Order #{order._id}</h4>
                     {order.piece.map((piece) =>
                         <div className="orderPiecesContent">
-                            <img className="order_piece_image" alt="Bracelet" src={piece.image} width="85"/>
+                            <img className="order_piece_image" alt="Bracelet" src={piece.image}/>
                             <h4>{piece.name}</h4>
                             <h4>${piece.price}</h4>
                         </div>
@@ -52,17 +62,16 @@ return(
             <div className = "reviewContent" key={review._id}>
                 <img className="review_piece_image" alt="Bracelet" src={review.piece.image} width="85"/>
                 <h4 className="reviewPiece">{review.piece.name}</h4>
-                <p className="reviewText">{review.text}</p>
-            
-                <button className="editReviewButton" onClick={() => setShowEditReviewForm(showEditReviewForm === review._id ? null : review._id)}>
-                    {showEditReviewForm === review._id ? "Cancel Edit" : "Edit"}
+                {review_idInEdit === review._id ? null : <p className="reviewText"id="reviewText">{review.text}</p>}
+                <button className="editReviewButton" onClick={() => setReview_IdInEdit(review_idInEdit === review._id ? null : review._id)}>
+                    {review_idInEdit === review._id ? "Cancel Edit" : "Edit"}
                 </button>
                 
-                {showEditReviewForm === review._id && (
+                {review_idInEdit === review._id && (
                     <EditReviewForm 
                         review={review} 
                         setReviews={setReviews} 
-                        setShowEditReviewForm={setShowEditReviewForm}
+                        setReview_IdInEdit={setReview_IdInEdit}
                     />
                 )}
             </div>

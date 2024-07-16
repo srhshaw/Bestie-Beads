@@ -20,8 +20,16 @@ h3{
     margin-left: 4vw;
     margin-right: 4vw;
     margin-top: 2vh;
-    
 } 
+.offDisplay{
+    display: none;
+}
+.onDisplay{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    line-clamp: 3;
+    -webkit-line-clamp: 3;
+}
 .orderContent, .reviewContent{
     margin: 1vh;
     padding: 1vh 2vw;
@@ -34,6 +42,7 @@ h3{
     display: flex;
     justify-content: space-between;
     margin: 1vh;
+   
 }
 .orderPiecesContent{ 
     background-color: rgba(119,225,208, .7);
@@ -49,19 +58,23 @@ h3{
     margin-right: 3vw;
     text-align: left; 
 }
-.review_piece_image{
+.review_piece_image, .order_piece_image{
     margin-right: 3vw;
+    width: 85px;
+    height: 85px;
 }
 p.reviewText{
     width: 35vw;
     margin-top: 2vh;
     margin-right: 3vw;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
+    text-align: justify;
     overflow: hidden;
     text-overflow: ellipsis;
-    text-align: justify;
+    display: -webkit-box;
+    line-clamp: 3;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    
 }
 
 @media screen and (max-width: 479px){
@@ -71,6 +84,7 @@ p.reviewText{
     } 
     .order_piece_image, .review_piece_image{
         width: 40px;
+        height: 40px;
     }
     p.reviewText{
         font-size: xx-small;
