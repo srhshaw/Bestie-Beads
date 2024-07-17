@@ -12,6 +12,12 @@ body{
   position: absolute;
   top: 15px;
   right: 10px;
+  text-shadow: 1.25px 1.25px 2px white;
+}
+
+i:hover{
+  color: orange;
+  text-shadow: 1.25px 1.25px 2px navy;
 }
 
 .footer{

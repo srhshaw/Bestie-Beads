@@ -93,8 +93,12 @@ button{
         font-size: 10px;
     }
 }
-
-@media screen and (max-width: 420px){
+@media screen and (max-width: 529px){
+    button{
+        font-size: x-small;
+    }
+}
+@media screen and (max-width: 479px){
     button{
         font-size: xx-small;
     }

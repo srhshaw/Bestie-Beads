@@ -9,11 +9,13 @@
   width: 10vw;
   height: 6vh;
   margin: 2px;
+  padding: 0px;
 }
 .form{
   margin-right: 0;
   float: right;
-  width: 300px;
+  /* width: 300px; */
+  /* width: 18vw; */
   padding: 5px;
   content: "";
   clear: both;
@@ -27,4 +29,25 @@
 #nameField, #reviewTextField{
   width: 50vw;
   font-size: medium;
+}
+
+@media screen and (max-width: 769px) and (min-width: 480px){
+  #nameField, #reviewTextField{
+    font-size: small;
+    max-width: 35vw;
+  }
+  .editReviewFormButton{
+    font-size: small;
+    height: 5vh;
+  }
+}
+@media screen and (max-width: 479px){
+  .editReviewFormButton, .editReviewButton{
+    font-size: xx-small;
+    height: 4vh;
+  }
+  #nameField, #reviewTextField{
+      font-size: xx-small;
+      max-width: 40vw;
+  }
 }
