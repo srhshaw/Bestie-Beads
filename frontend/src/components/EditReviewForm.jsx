@@ -4,7 +4,7 @@ import { BASE_URL } from "../globals"
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap' 
 import './EditReviewForm.css'
 
-const EditReviewForm = ({review, setReviews, setShowEditReviewForm}) => {
+const EditReviewForm = ({review, setReview_IdInEdit}) => {
     const [clickedButton, setClickedButton] = useState("")
 
     const updateReview = async(url, object) => {
@@ -26,11 +26,11 @@ const EditReviewForm = ({review, setReviews, setShowEditReviewForm}) => {
 
             let endpointUrl = `${BASE_URL}/reviews/${review._id}`
             updateReview(endpointUrl, formJson)
-            setShowEditReviewForm(false)
+            setReview_IdInEdit(null)
         } else if (clickedButton === "delete"){
             let endpointUrl = `${BASE_URL}/reviews/${review._id}`
             deleteReview(endpointUrl)
-            setShowEditReviewForm(false)
+            setReview_IdInEdit(null)
         }
     }
 

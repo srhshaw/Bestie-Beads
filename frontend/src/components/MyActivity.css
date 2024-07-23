@@ -1,4 +1,14 @@
-.editReviewButton{
+.cancelEditStyle{
+    width: 100px;
+    height: 6vh;
+    background-color: navy;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: auto 0;
+    font-size: medium;
+}
+.editStyle{
     width: 100px;
     height: 6vh;
     background-color: navy;
@@ -19,15 +29,7 @@ h3{
     margin-right: 4vw;
     margin-top: 2vh;
 } 
-.offDisplay{
-    display: none;
-}
-.onDisplay{
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    line-clamp: 3;
-    -webkit-line-clamp: 3;
-}
+
 .orderContent, .reviewContent{
     margin: 1vh;
     padding: 1vh 2vw;
@@ -75,8 +77,9 @@ p.reviewText{
 }
 
 @media screen and (max-width: 769px) and (min-width: 480px){
-    .editReviewButton{
+    .editStyle, .cancelEditStyle{
         height: 5vh;
+        font-size: small;
     }
     p.reviewText{
         font-size: small;
@@ -89,8 +92,12 @@ p.reviewText{
 }
 
 @media screen and (max-width: 479px){
-    .editReviewButton{
-        height: 4vh;
+    .editStyle{
+        width: 12vw;
+    }
+    .editStyle, .cancelEditStyle{
+        height: 3.5vh;
+        font-size: xx-small;
     } 
     .order_piece_image, .review_piece_image{
         width: 40px;

@@ -7,11 +7,12 @@
 
 .aboutP{
     margin: 10px;
+    font-size: x-large;
 }
 
 .aboutText{
     /* min-height: 25vh; */
-    font-size: x-large;
+    
     margin-left: 4vw;
     text-wrap: wrap;
     margin-right: 4vw;
@@ -34,13 +35,13 @@
 } */
 
 @media screen and (max-width: 1200px) and (min-width: 769px){
-    .aboutText{
+    .aboutP{
         font-size: large;
     }
 }
 
 @media screen and (max-width: 768px) {
-    .aboutText{
+    .aboutP{
         font-size: small;
     }
 }
