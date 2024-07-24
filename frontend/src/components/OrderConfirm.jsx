@@ -2,11 +2,15 @@ import './OrderConfirm.css'
 
 const OrderConfirm = () => {
     return(
-        <div className='confirmation'>
-            <p>
-                Order submitted.  Thank you for supporting Bestie Beads!
+        <div className="confirmation">
+            <p className = "confirmationText">
+                Order submitted.
             </p>
-            <img className = "kidPower" src="https://i.imgur.com/Kx7wi1E.jpg" height = "300" width = "200"></img>
+            <p className = "thanks">
+                Thank you for supporting Bestie Beads!
+            </p>
+            <img className = "kidPower" src="https://i.imgur.com/Kx7wi1E.jpg"></img>
+            <div className = "imgBackground"></div>
 
         </div>
     )
