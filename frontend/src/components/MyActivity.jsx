@@ -52,8 +52,8 @@ return(
             <div className = "reviewContent" key={review._id}>
                 <img className="review_piece_image" alt="Bracelet" src={review.piece.image} width="85"/>
                 <h4 className="reviewPiece">{review.piece.name}</h4>
-                {/* Why is this below conditional? */}
-                {review_idInEdit === review._id ? null : <p className="reviewText"id="reviewText">{review.text}</p>}
+                {/* The below conditional displays the review text when the associated piece is not in edit, and does not display the text when it is in edit, ie when review_idInEdit === review._id. */}
+                {review_idInEdit === review._id ? null : <p className="reviewText" id="reviewText">{review.text}</p>}
                 <button className = {review_idInEdit === review._id ? "cancelEditStyle" : "editStyle"} onClick={() => setReview_IdInEdit(review_idInEdit === review._id ? null : review._id)}>
                     {review_idInEdit === review._id ? "Cancel Edit" : "Edit"}
                     

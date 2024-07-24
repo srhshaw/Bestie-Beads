@@ -1,7 +1,30 @@
-createReviewForm{
+.createReviewForm{
     color: Navy;
+    margin-bottom: 4vh;
+
+}
+.btn-secondary{
+    background-color: navy;
+    border-radius: 0px;
 }
 
-createReviewButton{
-    color: navy;
+@media screen and (max-width: 1200px) and (min-width: 769px){
+    .btn-secondary{
+        font-size: medium;
+    }
+}
+@media screen and (max-width: 768px){
+    .btn-secondary{
+        font-size: small;
+    }
+}
+@media screen and (max-width: 529px){
+    .btn-secondary{
+        font-size: x-small;
+    }
+}
+@media screen and (max-width: 479px){
+    .btn-secondary{
+        font-size: xx-small;
+    }
 }

@@ -52,7 +52,7 @@ return (
             type="textarea"
             />
         </FormGroup>
-        <Button className= "createReviewButton" type = "submit">
+        <Button type = "submit">
             Submit
         </Button>
     </Form>
