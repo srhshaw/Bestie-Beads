@@ -50,9 +50,12 @@ async function getOneOrder(req, res){
 async function createOrder(req, res){
     console.log("create order")
     try{
-        const order =  await new Order(req.body)
+        const order = await new Order(req.body)
         await order.save()
 
+        const customerEmailAddress = order.email
+
+        //Order confirmation email to customer
         const transporter = nodemailer.createTransport({
             service: siteEmailService,
             auth: {
@@ -63,9 +66,10 @@ async function createOrder(req, res){
 
         const mailOptions = {
             from: siteEmailAddress,
-            to: makerEmailAddress,
-            subject: 'New Bestie Beads order!',
-            text: 'A new Bestie Beads order has been submitted online.  Please check the order database.'
+            to: customerEmailAddress,
+            subject: 'Bestie Beads Order Confirmation',
+            text: `Dear ${order.firstName},\n
+            Your order # ${order.id} has been submitted.  Thank you for supporting Bestie Beads!`
         }
 
         transporter.sendMail(mailOptions, function(error, info){
@@ -75,7 +79,6 @@ async function createOrder(req, res){
                 console.log("Email sent: " + info.response)
             }
         })
-
         return res.status(201).json({
             order
         })
