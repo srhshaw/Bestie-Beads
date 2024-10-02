@@ -2,13 +2,20 @@ const Order = require('../models/order')
 const Piece = require('../models/piece')
 const Review = require('../models/review')
 const nodemailer = require('nodemailer')
-const emailConfig = require('../emailConfig')
 
-const siteEmailService = emailConfig.siteEmailService
-const siteEmailAddress = emailConfig.siteEmailAddress
-const siteEmailPassword = emailConfig.siteEmailPassword
-const makerEmailAddress = emailConfig.makerEmailAddress
-
+let siteEmailService, makerEmailAddress, siteEmailAddress, siteEmailPassword
+try {
+    const emailConfig = require('../emailConfig')
+    siteEmailService = emailConfig.siteEmailService
+    siteEmailAddress = emailConfig.siteEmailAddress
+    siteEmailPassword = emailConfig.siteEmailPassword
+    makerEmailAddress = emailConfig.makerEmailAddress 
+} catch(err) {
+    siteEmailService = process.env.SITEEMAILSERVICE
+    siteEmailAddress = process.env.SITEEMAILADDRESS
+    siteEmailPassword = process.env.SITEEMAILPASSWORD
+    makerEmailAddress = process.env.MAKEREMAILADDRESS
+}
 
     module.exports = { getAllOrders, getOrdersByUserId, getOneOrder, createOrder, updateOrder, deleteOrder,getAllPieces, getOnePiece, createPiece, updatePiece, deletePiece, getAllReviews, getReviewsByPieceId, getReviewsByUserId, getOneReview, createReview, updateReview, deleteReview
 }
