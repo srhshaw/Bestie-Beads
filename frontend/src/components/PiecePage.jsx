@@ -15,6 +15,7 @@ export default function PieceDetail({userId}) {
 
 
     useEffect(() => {
+        console.log(BASE_URL)
         const getPiece = async() => {
             const response = await axios.get(`${BASE_URL}/pieces/${id}`)
             setPiece(response.data)

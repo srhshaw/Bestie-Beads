@@ -9,6 +9,7 @@ const PieceList = () => {
     const [pieces, setPieces] = useState([])
  
     useEffect(() => {
+        console.log(BASE_URL)
         const getPieces = async () => {
         const response = await axios.get(`${BASE_URL}/pieces`)
         setPieces(response.data)
