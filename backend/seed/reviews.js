@@ -65,6 +65,12 @@ const main = async () => {
         userId: '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d',
         text: "The star is an emblem and the variegated beads make it look like it is sparkling."
         },
+        {
+        piece: "6566b08bb1acf4b85ae0eb18",
+        userName: "Shanda",
+        userId: 'adaa9ecd-5892-417c-a93c-0868c29ed7f6',
+        text: "I recently purchased the Purple Galaxy handmade bracelet, and I couldn't be happier with my choice! The vibrant purple clay beads are stunning, each one uniquely crafted and full of character. The design perfectly captures the beauty of a starry night, making it a standout piece in my jewelry collection. Not only is it visually striking, but it also feels incredibly comfortable to wear. I've received countless compliments every time I wear it, and it adds a touch of elegance to any outfit. This bracelet is truly a treasure, showcasing the artistry and creativity that went into its creation. Highly recommend!"
+        },
     ]
     await Review.insertMany(reviews)
     console.log("Created some reviews!")
