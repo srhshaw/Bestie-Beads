@@ -39,7 +39,7 @@ const Cart = ({pieces, prices}) => {
                 hideForm()
                 showDeliverTo()
             } else {
-                showForm()
+                showBlankForm()
                 hideDeliverTo()
             }
         }
@@ -118,7 +118,13 @@ const Cart = ({pieces, prices}) => {
         const contactInput = document.getElementById("contactInput")
         contactInput.classList.add("offDisplay")
     }
-    function showForm(){
+
+    function showBlankForm(){
+        const contactInput = document.getElementById("contactInput")
+        contactInput.classList.remove("offDisplay")
+    }
+
+    function showEditableForm(){
         const contactInput = document.getElementById("contactInput")
         contactInput.classList.remove("offDisplay")
         document.getElementById("firstName").defaultValue = deliveryInfo.firstName
@@ -210,7 +216,7 @@ const Cart = ({pieces, prices}) => {
                     </p>
                     <Button className= "cartButton" id="editContactInfoButton" type = "button" onClick={()=>{
                                 hideDeliverTo()
-                                showForm()
+                                showEditableForm()
                                 }}>
                         Edit
                     </Button>
